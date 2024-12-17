@@ -42,7 +42,7 @@ public class ContainerDetailsServiceTests
             new object[]
             {
                 new TestContainerProperties(
-                    "FullResponse", CreateContainerProperties("test-registry", "test-repository", "test-image", "test-tag")),
+                    "FullResponse", CreateContainerProperties("test-registry", "test-repository", "test-image", "test-tag", "test-context", "test-dockerfile")),
             },
             new object[]
             {
@@ -103,12 +103,19 @@ public class ContainerDetailsServiceTests
     private static MsBuildProperties<MsBuildContainerProperties> CreateContainerProperties(string? registry = null,
         string? repo = null,
         string? image = null,
-        string? tag = null) =>
+        string? tag = null,
+        string? dockerfileContext = null,
+        string? dockerfileFile = null) =>
         new()
         {
             Properties = new()
             {
-                ContainerRegistry = registry, ContainerRepository = repo, ContainerImageName = image, ContainerImageTag = tag,
+                ContainerRegistry = registry,
+                ContainerRepository = repo,
+                ContainerImageName = image,
+                ContainerImageTag = tag,
+                DockerfileContext = dockerfileContext,
+                DockerfileFile = dockerfileFile,
             },
         };
 
