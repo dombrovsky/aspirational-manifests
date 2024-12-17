@@ -14,7 +14,7 @@ var settings = new MinVerSettings()
 {
     AutoIncrement = MinVerAutoIncrement.Minor,
     DefaultPreReleasePhase = "preview",
-    MinimumMajorMinor = "0.1",
+    MinimumMajorMinor = "0.2",
     TagPrefix = "v",
     Verbosity = MinVerVerbosity.Trace,
 };
