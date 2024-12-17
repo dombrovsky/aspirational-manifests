@@ -9,9 +9,7 @@ env:
   CAKE_SETTINGS_SKIPVERIFICATION: true
 
 on:
-  push:
-    tags:
-      - "*"
+  workflow_dispatch:
 
 jobs:
   build-test-pull-request:
