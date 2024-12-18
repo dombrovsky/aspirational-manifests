@@ -88,11 +88,11 @@ public sealed class ProjectProcessor(
             var dockerfileResource = new DockerfileResource()
             {
                 Path = dockerfileFile,
+                Name = !string.IsNullOrEmpty(containerDetails.ContainerRepository) ? containerDetails.ContainerRepository : project.Name,
                 Context = !string.IsNullOrEmpty(containerDetails.DockerfileContext) ? containerDetails.DockerfileContext : options.BuildContext,
                 Annotations = project.Annotations,
                 Bindings = project.Bindings,
                 Env = project.Env,
-                Name = project.Name,
                 BuildArgs = options.BuildArgs
             };
 
